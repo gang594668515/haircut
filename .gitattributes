@@ -1,0 +1,5 @@
+##以下文件按照java文件在github中进行识别，类别以Java进行显示（github默认以什么文件多，按照文件格式进行分类显示）
+*.css linguist-language=java
+*.less linguist-language=java
+*.js linguist-language=java
+*.html linguist-language=java
