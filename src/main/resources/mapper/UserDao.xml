@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wg.haircut.dao.UserDao">
+    <sql id="tableColumns">
+        a.login_name as loginName,
+        a.name,
+        a.password,
+        a.role,
+        a.create_name as createName,
+        a.create_date as createDate
+    </sql>
+
+    <insert id="insert" parameterType="com.wg.haircut.model.User">
+        INSERT INTO
+        hair_user a (
+        a.login_name,
+        a.name,
+        a.password,
+        a.role,
+        a.create_name
+        ) values (
+        #{loginName},
+        #{name},
+        #{password},
+        #{role},
+        #{createName}
+        )
+    </insert>
+
+    <select id="selectUsers" resultType="com.wg.haircut.model.User">
+        SELECT
+        <include refid="tableColumns"/>
+        FROM
+        hair_user a
+    </select>
+</mapper>
